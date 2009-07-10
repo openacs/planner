@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="planner" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="blocks_add_activity">Add a new activity</msg>
+  <msg key="blocks_add_existing_activity">Add an activity</msg>
+  <msg key="blocks_add_label">Add New Label</msg>
+  <msg key="blocks_add_resource">Add a new resource</msg>
+  <msg key="blocks_choose">CHOOSE</msg>
+  <msg key="blocks_choose_activity">Choose Activity</msg>
+  <msg key="blocks_course_edit_mode">Edit Course Mode</msg>
+  <msg key="blocks_course_settings">Course Settings</msg>
+  <msg key="blocks_delete">Delete</msg>
+  <msg key="blocks_edit">Edit</msg>
+  <msg key="blocks_edit_block_summary">Edit Block Summary</msg>
+  <msg key="blocks_edit_label">Edit Existing Label</msg>
+  <msg key="blocks_edit_mode">Edit Mode:</msg>
+  <msg key="blocks_format">Format</msg>
+  <msg key="blocks_go_to">Go To ...</msg>
+  <msg key="blocks_hide_from_students">Hide from students</msg>
+  <msg key="blocks_info_message">Welcome to the time/themes spaces planner of the course. &lt;br /&gt;
+Use the course settings located at the right side of the upper bar to choose the time/themes format for the course.&lt;br /&gt;
+Start adding resources by turning on the Edit Mode.</msg>
+  <msg key="blocks_label">Label</msg>
+  <msg key="blocks_label_empty">Label can't be empty</msg>
+  <msg key="blocks_link_to_file_web_folder">Link to file, web site or folder</msg>
+  <msg key="blocks_move">Move</msg>
+  <msg key="blocks_move_down">Move down</msg>
+  <msg key="blocks_move_left">Move left</msg>
+  <msg key="blocks_move_object_to_this_location">Move %move_name% to this location</msg>
+  <msg key="blocks_move_right">Move right</msg>
+  <msg key="blocks_move_up">Move up</msg>
+  <msg key="blocks_new_object_alert_message">The activity has been added to the &lt;a href=%community_url%&gt;planner&lt;/a&gt;</msg>
+  <msg key="blocks_not_available">Not available</msg>
+  <msg key="blocks_note">Note: In the tutorials we refer as &quot;block&quot; to a section in the planner.</msg>
+  <msg key="blocks_number_of_weeks">Number of Weeks/Topics</msg>
+  <msg key="blocks_OFF">OFF</msg>
+  <msg key="blocks_ON">ON</msg>
+  <msg key="blocks_planner_configuration">Planner Configuration</msg>
+  <msg key="blocks_planner_navigation">Navigating inside the planner</msg>
+  <msg key="blocks_planner_organization">Planner Organization</msg>
+  <msg key="blocks_select_activity">Select Activity</msg>
+  <msg key="blocks_select_type_of_activity">Select Type of Activity</msg>
+  <msg key="blocks_show_to_students">Show to students</msg>
+  <msg key="blocks_start_date">Start Date</msg>
+  <msg key="blocks_summary">Summary</msg>
+  <msg key="blocks_summary_must_be">Summary must be lower than 4000 characters</msg>
+  <msg key="blocks_text_page">Text page</msg>
+  <msg key="blocks_there_are_no_activities">There are no activities of this type</msg>
+  <msg key="blocks_topic">Topic</msg>
+  <msg key="blocks_topics_format">Topics Format</msg>
+  <msg key="blocks_tutorials">Mini-Tutorials</msg>
+  <msg key="blocks_view">Blocks View</msg>
+  <msg key="blocks_warning">&lt;img border=&quot;0&quot; height=&quot;9&quot; width=&quot;12&quot; title=&quot;Help text&quot; alt=&quot;[i]&quot; src=&quot;/shared/images/info.gif&quot;/&gt; The blocks are a planning by weeks or topics.
+&lt;br&gt;The Blocks View will change the link to the class home from the portlet view to the block view.</msg>
+  <msg key="blocks_watch_tutorial">Watch Tutorial</msg>
+  <msg key="blocks_web_page">HTML page</msg>
+  <msg key="blocks_week">Week</msg>
+  <msg key="blocks_weekly_format">Weekly Format</msg>
+  <msg key="blocks_year_error">The year must be lower than 2035</msg>
+  <msg key="Cancel">Cancel</msg>
+  <msg key="Confirm">Confirm</msg>
+  <msg key="OFF">OFF</msg>
+  <msg key="ok">ok</msg>
+  <msg key="ON">ON</msg>
+  <msg key="planner_view">Planner View</msg>
+  <msg key="planner_warning">The planner view will overwrite the course home </msg>
+  <msg key="select_multiple">SELECT MULTIPLE RESOURCES</msg>
+</message_catalog>

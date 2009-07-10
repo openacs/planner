@@ -1,0 +1,107 @@
+#edit-mode a { color: #CCC; }
+#edit-mode a:link { color: #CCC; }
+#edit-mode a:hover { color: #FFF; }
+.object-hidden { color: gray; }
+.object-hidden a:link { color: gray; }
+.object-hidden a:hover { color: gray; }
+.object-hidden a:visited { color: gray; }
+.block-border { text-align: center; width: 20px; }
+.current-block { background-color: #4D99E6; }
+.hidden-block { background-color: #DDDDDD; }
+
+#blocks {
+    margin: 0 2.5%;
+}
+
+#blocklist {
+    padding-left: 0;
+    margin-top: 0;
+}
+
+#blocklist0 {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.simple-list {
+    list-style-image:none; 
+    list-style-position:outside; 
+    list-style-type:none;
+}
+
+.portlet ul {
+    list-style-image:none; 
+    list-style-position:outside; 
+    list-style-type:none;
+}
+
+.minh15 {
+    min-height: 15px;
+}
+.minh25 {
+    min-height: 25px;
+}
+.table {
+    width: 100%;
+}
+.blocks-move {
+    cursor: move;
+}
+a {
+    cursor: pointer;
+}
+.selected_a {
+    color: #E82C0C;
+}
+
+/* PORTLETS -----------------------------------------------------------*/
+/* contains: all general portlet styles like title, frame, font etc. */
+/* Note: additional styles for specific packages (ie. calendar, survey) 
+are located in the css for that package (eg. Selva_calendar.css)  */
+
+.portlet {
+    padding: 0;
+}
+/*EDIT*/
+
+.title {
+  height:52px;
+  background-image:url(/resources/theme-tupi/images/added/U.gif);
+  background-position:top;
+  background-repeat:repeat-x;
+  background-color:#f2f2f2;
+}
+
+.collapse  {
+  border:0px;
+  text-decoration:none;
+  float:left;
+  margin-left:5px;
+  text-align:right;
+  width:30%;
+
+}
+
+.noheight {
+  height:1px;
+  width: 80%;
+  border: 1px solid red;
+}
+
+.resalte {
+  font-weight:bold;
+  color:#515151;
+}
+
+/*END EDIT*/
+
+/* END OF PORTLETS*/

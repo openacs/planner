@@ -1,0 +1,18 @@
+Run the script.sh to make the planner work with the new features, 
+this script will patch some packages.
+
+Details of the patch:
+
+forums, evaluation, assessment, file-storage:
+- Provide an extend and insert callback inside the add/edit page 
+of each package to link the resources to the planner
+
+dotlrn-portlet:
+Add a link to turn the planner on from the dotlrn admin portlet
+
+dotlrn:
+Change the index to make the course home the planner when the planner is on
+
+theme-zen:
+- add a script to display the select with all the activities in the planner
+

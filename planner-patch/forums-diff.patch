@@ -1,0 +1,113 @@
+diff -crNB dotlrn-2.4.1/packages/forums/lib/forums/new.tcl forums/lib/forums/new.tcl
+*** dotlrn-2.4.1/packages/forums/lib/forums/new.tcl	2009-07-05 21:02:52.000000000 -0400
+--- forums/lib/forums/new.tcl	2009-07-05 21:18:38.000000000 -0400
+***************
+*** 46,51 ****
+--- 46,55 ----
+          forum::new_questions_deny -forum_id $forum_id
+      }
+  
++ ## Planner View
++     callback -catch -impl "dotlrn" planner::insert_object -block_id $block_id -object_id $forum_id
++ ###
++ 
+      ad_returnredirect $return_url
+      ad_script_abort
+  }
+***************
+*** 56,61 ****
+--- 60,69 ----
+      element set_properties forum forum_id -value $forum_id
+      element set_value forum new_threads_p 1
+      element set_value forum name $name
++ 
++ ## Planner View -> Extend Form
++     callback -catch -impl "dotlrn" planner::extend_form -block_id $block_id -form_name "forum"
++ ###
+  }
+  
+  if {[exists_and_not_null alt_template]} {
+diff -crNB dotlrn-2.4.1/packages/forums/tcl/forums-callback-procs.tcl forums/tcl/forums-callback-procs.tcl
+*** dotlrn-2.4.1/packages/forums/tcl/forums-callback-procs.tcl	2009-07-05 21:02:52.000000000 -0400
+--- forums/tcl/forums-callback-procs.tcl	2009-07-05 21:16:58.000000000 -0400
+***************
+*** 101,106 ****
+--- 101,138 ----
+      }
+  }
+  
++ ad_proc -public -callback planner::edit_url -impl forums_forum {} {
++ 
++     @author alvaro@viaro.net
++     @creation_date Jul-08
++ 
++     returns a url for the edit action of a forum to the dotlrn blocks
++ 
++ } {
++     set forum_id $object_id
++     set package_id [acs_object::package_id -object_id $forum_id]
++     set package_url [apm_package_url_from_id $package_id]
++ 
++     return "${package_url}admin/forum-edit?forum_id=$forum_id"
++ }
++ 
++ ad_proc -public -callback planner::delete_url -impl forums_forum {} {
++ 
++     @author alvaro@viaro.net
++     @creation_date Jul-08
++ 
++     returns a url for the edit action of a forum to the dotlrn blocks
++ 
++ } {
++     set forum_id $object_id
++     set package_id [acs_object::package_id -object_id $forum_id]
++     set package_url [apm_package_url_from_id $package_id]
++ ## Delete forums is not allowed in recent versions of forums
++ #    return "${package_url}admin/forum-delete?forum_id=$forum_id"
++ ###
++     return "."
++ }
++ 
+  ad_proc -public -callback search::datasource -impl forums_message {} {
+  
+      @author dave@thedesignexperience.org
+diff -crNB dotlrn-2.4.1/packages/forums/www/admin/forum-new.adp forums/www/admin/forum-new.adp
+*** dotlrn-2.4.1/packages/forums/www/admin/forum-new.adp	2009-07-05 21:02:52.000000000 -0400
+--- forums/www/admin/forum-new.adp	2009-07-05 21:20:43.000000000 -0400
+***************
+*** 3,6 ****
+  <property name="context">@context;noquote@</property>
+  <property name="focus">forum.name</property>
+  
+! <include src="/packages/forums/lib/forums/new" name="@name@" return_url="../">
+--- 3,6 ----
+  <property name="context">@context;noquote@</property>
+  <property name="focus">forum.name</property>
+  
+! <include src="/packages/forums/lib/forums/new" name="@name@" return_url="../" block_id="@block_id@">
+diff -crNB dotlrn-2.4.1/packages/forums/www/admin/forum-new.tcl forums/www/admin/forum-new.tcl
+*** dotlrn-2.4.1/packages/forums/www/admin/forum-new.tcl	2009-07-05 21:02:52.000000000 -0400
+--- forums/www/admin/forum-new.tcl	2009-07-05 21:20:34.000000000 -0400
+***************
+*** 8,13 ****
+--- 8,14 ----
+  
+  } -query {
+      {name ""}
++     {block_id ""}
+  }
+  
+  set context [list [_ forums.Create_New_Forum]]
+diff -crNB dotlrn-2.4.1/packages/forums/www/forum-view.adp forums/www/forum-view.adp
+*** dotlrn-2.4.1/packages/forums/www/forum-view.adp	2009-07-05 21:02:52.000000000 -0400
+--- forums/www/forum-view.adp	2009-07-05 21:21:05.000000000 -0400
+***************
+*** 2,7 ****
+--- 2,8 ----
+    <property name="title">@page_title;noquote@</property>
+    <property name="context">@context;noquote@</property>
+    <property name="displayed_object_id">@forum_id;noquote@</property>
++   <property name="planner_object_id">@forum_id;noquote@</property>
+  
+  <h1>@page_title;noquote@</h1>
+  <if @searchbox_p@ true>

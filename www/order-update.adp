@@ -1,0 +1,1 @@
+@block_ids@;@block_names@;@block_indexes@;@current_id@

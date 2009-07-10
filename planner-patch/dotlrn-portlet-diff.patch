@@ -1,0 +1,45 @@
+diff -crNB dotlrn-2.4.1/packages/dotlrn-portlet/www/dotlrn-admin-portlet.adp dotlrn-portlet/www/dotlrn-admin-portlet.adp
+*** dotlrn-2.4.1/packages/dotlrn-portlet/www/dotlrn-admin-portlet.adp	2009-07-05 21:03:00.000000000 -0400
+--- dotlrn-portlet/www/dotlrn-admin-portlet.adp	2009-07-07 14:06:14.000000000 -0400
+***************
+*** 22,27 ****
+--- 22,37 ----
+  <comment>Group properties section</comment>
+  
+  <ul>
++   <if @planner_p@>
++   <li>#planner.planner_view# -
++     <if @planner_view_p@ eq "t">
++        #planner.ON# / <a href="@planner_view_url;noquote@"> #planner.OFF# </a>
++     </if><else>
++        <a href="@planner_view_url;noquote@">#planner.ON#</a> / #planner.OFF#
++     </else>
++     <small>#planner.planner_warning#</small>
++   </li>
++   </if>
+    <li><a href="community-edit" title="#dotlrn-portlet.edit_gr_props#">#dotlrn-portlet.edit_gr_props#</a> - #dotlrn-portlet.change_name_etc#
+      <ul>
+  <if @customize_portal_layout_p@ eq 1 or @dotlrn_admin_p@ eq 1 >
+diff -crNB dotlrn-2.4.1/packages/dotlrn-portlet/www/dotlrn-admin-portlet.tcl dotlrn-portlet/www/dotlrn-admin-portlet.tcl
+*** dotlrn-2.4.1/packages/dotlrn-portlet/www/dotlrn-admin-portlet.tcl	2009-07-05 21:03:00.000000000 -0400
+--- dotlrn-portlet/www/dotlrn-admin-portlet.tcl	2009-07-07 14:06:41.000000000 -0400
+***************
+*** 99,101 ****
+--- 99,115 ----
+  
+  set limited_user_add_url [export_vars -base user-add {{type student} {can_browse_p 0} {read_private_data_p t}}]
+  set club_limited_user_add_url [export_vars -base user-add {{type student} {can_browse_p 0} {read_private_data_p f}}]
++ ## Planner View
++ set planner_p [apm_package_installed_p "planner"]
++ if { $planner_p } {
++     set planner_view_p [planner::enabled_p -community_id $community_id]
++     set return_url [ad_conn url]
++     if {[empty_string_p $planner_view_p] || [string equal $planner_view_p "f"]} {
++         set planner_view_url [export_vars -base "admin/planner-enable" { {enable_p "t"} \
++                 return_url}]
++     } else {
++         set planner_view_url [export_vars -base "admin/planner-enable" { {enable_p "f"} \
++                 return_url}]
++     }
++ }
++ ###

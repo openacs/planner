@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="planner" package_version="1.0b" locale="es_ES" charset="ISO-8859-1">
+
+  <msg key="blocks_add_activity">Añadir una actividad nueva</msg>
+  <msg key="blocks_add_existing_activity">Añadir una actividad</msg>
+  <msg key="blocks_add_label">Agregar Nueva Etiqueta</msg>
+  <msg key="blocks_add_resource">Añadir un recurso nuevo</msg>
+  <msg key="blocks_choose">SELECCIONAR</msg>
+  <msg key="blocks_choose_activity">Elija la Actividad</msg>
+  <msg key="blocks_course_edit_mode">Editar Curso</msg>
+  <msg key="blocks_course_settings">Configuración del Curso</msg>
+  <msg key="blocks_delete">Borrar</msg>
+  <msg key="blocks_edit">Editar</msg>
+  <msg key="blocks_edit_block_summary">Editar Resumen del Bloque</msg>
+  <msg key="blocks_edit_label">Editar Etiqueta Existente</msg>
+  <msg key="blocks_edit_mode">Modo de Edición:</msg>
+  <msg key="blocks_format">Formato</msg>
+  <msg key="blocks_go_to">Ir a ...</msg>
+  <msg key="blocks_hide_from_students">Ocultar para los estudiantes</msg>
+  <msg key="blocks_info_message">Bienvenido al planificador de espacios temporales/temáticos del curso. 
+&lt;br /&gt;Use la opción de configuración del curso situada en la barra superior a la derecha para seleccionar el formato temporal/temático del curso. 
+&lt;br /&gt;A continuación comience a añadir recursos usando la opción Activar.</msg>
+  <msg key="blocks_label">Etiqueta</msg>
+  <msg key="blocks_label_empty">La etiqueta no puede estar vacía</msg>
+  <msg key="blocks_link_to_file_web_folder">Enlace a un archivo, enlace o carpeta</msg>
+  <msg key="blocks_move">Mover</msg>
+  <msg key="blocks_move_down">Mover hacia abajo</msg>
+  <msg key="blocks_move_left">Mover a la izquierda</msg>
+  <msg key="blocks_move_object_to_this_location">Mover %move_name% a esta posición</msg>
+  <msg key="blocks_move_right">Mover a la derecha</msg>
+  <msg key="blocks_move_up">Mover hacia arriba</msg>
+  <msg key="blocks_new_object_alert_message">La actividad se ha añadido al &lt;a href=%community_url%&gt;planificador&lt;/a&gt;</msg>
+  <msg key="blocks_not_available">No disponible</msg>
+  <msg key="blocks_note">Nota: Dentro de los tutoriales se denomina &quot;bloque&quot; a una sección del planificador.</msg>
+  <msg key="blocks_number_of_weeks">Numero de Semanas/Temas</msg>
+  <msg key="blocks_OFF">Desactivar</msg>
+  <msg key="blocks_ON">Activar</msg>
+  <msg key="blocks_planner_configuration">Configuración del Planificador</msg>
+  <msg key="blocks_planner_navigation">Navegando dentro del Planificador</msg>
+  <msg key="blocks_planner_organization">Organización del Planificador</msg>
+  <msg key="blocks_select_activity">Seleccionar Actividad</msg>
+  <msg key="blocks_select_type_of_activity">Seleccione el Tipo de Actividad</msg>
+  <msg key="blocks_show_to_students">Mostrar a los estudiantes</msg>
+  <msg key="blocks_start_date">Fecha de Inicio</msg>
+  <msg key="blocks_summary">Resumen</msg>
+  <msg key="blocks_summary_must_be">El resúmen debe ser menor que 4000 caracteres</msg>
+  <msg key="blocks_text_page">Página de texto</msg>
+  <msg key="blocks_there_are_no_activities">No hay actividades de este tipo</msg>
+  <msg key="blocks_topic">Tema</msg>
+  <msg key="blocks_topics_format">Formato de Temas</msg>
+  <msg key="blocks_tutorials">Mini-Tutoriales</msg>
+  <msg key="blocks_view">Vista por Bloques</msg>
+  <msg key="blocks_warning">&lt;img border=&quot;0&quot; height=&quot;9&quot; width=&quot;12&quot; title=&quot;Help text&quot; alt=&quot;[i]&quot; src=&quot;/shared/images/info.gif&quot;/&gt; Los bloques son una planificación por semanas o unidades didácticas.
+&lt;br&gt;La Vista por Bloques cambiará el enlace del Curso de la vista por portlets a la vista por bloques.</msg>
+  <msg key="blocks_watch_tutorial">Ver Tutorial</msg>
+  <msg key="blocks_web_page">Página HTML</msg>
+  <msg key="blocks_week">Semana</msg>
+  <msg key="blocks_weekly_format">Formato de Semanas</msg>
+  <msg key="blocks_year_error">El año debe ser menor que 2035</msg>
+</message_catalog>

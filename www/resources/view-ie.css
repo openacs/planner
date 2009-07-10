@@ -1,0 +1,25 @@
+
+.bcontslide {
+    margin-top: -8px;
+    background-color:#F2F2F2;
+}
+.bfoot_L {
+    margin-top: -2px;
+}
+.bfoot_R {
+    margin-top: -2px;
+}
+.bfoot {
+
+}
+.portlet_head_top {    
+    margin-bottom: 3px;    
+    margin-top: -5px;
+    border: 0;
+    background-color: #FFFFFF;
+}
+.bportlet-wrapper {
+    background-color: #FFFFFF;
+    margin: 0 3% 0 -1.5%;
+}
+

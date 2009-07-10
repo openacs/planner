@@ -1,0 +1,19 @@
+
+.portlet_head_top {
+    margin-bottom: -20px;
+    background-color: none;
+}
+#blocklist .portlet_head_top {
+    border: 0;
+}
+.bcontslide {
+    margin-top: -8px;
+    background-color:#F2F2F2;
+}
+.bfoot .bfoot_L, .bfoot .bfoot_R {
+    margin-top: 0;
+}
+.bportlet-wrapper {
+    background-color: #FFFFFF;
+    margin: 0 3% 0 -1.5%;
+}
