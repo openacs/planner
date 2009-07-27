@@ -68,7 +68,7 @@ ad_proc -public planner::get_objects_names {
                 set parent_id [category::get_parent -category_id $object_id]
                 for {set i 0} { $parent_id != 0 && $i < 2 } { incr i } {
                     set category_id $parent_id
-                    set name "[content_portlet::get_category_name -category_id $parent_id]:$name"
+                    set name "[learning_content::get_category_name -category_id $parent_id]:$name"
                     set parent_id [category::get_parent -category_id $category_id]
                 }
                 set names($object_id) $name
@@ -123,14 +123,14 @@ ad_proc -public planner::get_content_categories {
                         set subcategories [category::get_children -category_id $category_id]
                         foreach subcategory_id $subcategories {
                             if { [llength [category::get_objects -category_id $subcategory_id]] > 0 } {
-                                set subcategory_name [content_portlet::get_category_name -category_id $subcategory_id]
+                                set subcategory_name [learning_content::get_category_name -category_id $subcategory_id]
                                 set subcategory_name "&nbsp;&nbsp;&nbsp;&nbsp;  $subcategory_name"
                                 lappend subcategory_list $subcategory_id $subcategory_name
                             }
                         }
                     }
                     if { [llength [category::get_objects -category_id $category_id] ] || [llength $subcategory_list] > 0 } {
-                        set category_name [content_portlet::get_category_name -category_id $category_id]
+                        set category_name [learning_content::get_category_name -category_id $category_id]
                         set category_name "&nbsp;&nbsp; $category_name"
                         lappend category_list $category_id $category_name
                     }
@@ -138,7 +138,7 @@ ad_proc -public planner::get_content_categories {
                 }
             }
             if { [llength [category::get_objects -category_id $category_id] ] || [llength $category_list] > 0 } {
-                set unit_name [content_portlet::get_category_name -category_id $unit_id]
+                set unit_name [learning_content::get_category_name -category_id $unit_id]
                 lappend tree_list $unit_id $unit_name
             }
             foreach cat $category_list { lappend tree_list $cat }
@@ -666,11 +666,11 @@ ad_proc -public planner::get_object_name {
             set object_name [db_string get_chat_room_name {} -default ""]
         }
         "category" {
-            set object_name [content_portlet::get_category_name -category_id $object_id]
+            set object_name [learning_content::get_category_name -category_id $object_id]
             set parent_id [category::get_parent -category_id $object_id]
             for {set i 0} { $parent_id != 0 && $i < 2 } { incr i } {
                 set object_id $parent_id
-                set object_name "[content_portlet::get_category_name -category_id $parent_id]:$object_name"
+                set object_name "[learning_content::get_category_name -category_id $parent_id]:$object_name"
                 set parent_id [category::get_parent -category_id $object_id]
             }
         }
@@ -765,7 +765,7 @@ ad_proc -public planner::get_object_icon {
         }
         "category" -
         "apm_package" {
-            set object_image "/resources/theme-tupi/images/added/content_portlet.png"
+            set object_image "/resources/theme-tupi/images/added/learning_content.png"
         }
         "chat_room" {
             set object_image "/resources/theme-tupi/images/added/chat_portlet.png"
