@@ -18,7 +18,7 @@ diff -crNB dotlrn-2.4.1/packages/assessment/www/asm-admin/assessment-form.tcl as
   }
   
 + ## Planner View -> Extend Form
-+     callback -catch -impl "dotlrn" planner::extend_form -block_id $block_id -form_name "assessment_form" -block_object_type $block_object_type
++     callback -catch -impl "dotlrn" planner::extend_form -block_id $block_id -form_name "assessment_form"
 + ###
 + 
   ad_form -extend -name assessment_form -new_request {
@@ -31,7 +31,7 @@ diff -crNB dotlrn-2.4.1/packages/assessment/www/asm-admin/assessment-form.tcl as
       }
   } -after_submit {
 +     ## Planner View
-+         callback -catch -impl "dotlrn" planner::insert_object -block_id $block_id -object_id $assessment_id -resource_type $block_object_type
++         callback -catch -impl "dotlrn" planner::insert_object -block_id $block_id -object_id $assessment_id
 +     ###
       if {$permission_p} {
           permission::grant -party_id "-1" -object_id $assessment_id -privilege read
