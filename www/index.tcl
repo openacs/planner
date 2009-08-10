@@ -56,7 +56,7 @@ if { $admin_p } {
     set forums_package_id [dotlrn_community::get_package_id_from_package_key -package_key forums -community_id $community_id]
     set forums_url [apm_package_url_from_id $forums_package_id]
     if { $learning_content_p } {
-        set content_package_url [lindex [site_node::get_children  -package_key "xowiki" -filters {name "content"} -node_id [site_node::get_node_id_from_object_id -object_id $package_id]] 0]
+        set content_package_url [lindex [site_node::get_children  -package_key "xowiki" -filters {name "learning-content"} -node_id [site_node::get_node_id_from_object_id -object_id $package_id]] 0]
         array set site_node [site_node::get_from_url -url $content_package_url]
         set content_package_id $site_node(package_id)
     }
