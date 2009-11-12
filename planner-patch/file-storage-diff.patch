@@ -1,6 +1,6 @@
-diff -crNB blocks-new/packages/file-storage/tcl/file-storage-callback-procs.tcl blocks-clean/packages/file-storage/tcl/file-storage-callback-procs.tcl
-*** blocks-new/packages/file-storage/tcl/file-storage-callback-procs.tcl	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/tcl/file-storage-callback-procs.tcl	2009-07-05 21:25:19.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/tcl/file-storage-callback-procs.tcl file-storage/tcl/file-storage-callback-procs.tcl
+*** dotlrn-2.4.1/packages/file-storage/tcl/file-storage-callback-procs.tcl	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/tcl/file-storage-callback-procs.tcl	2009-07-05 21:25:19.000000000 -0400
 ***************
 *** 243,245 ****
 --- 243,367 ----
@@ -129,9 +129,9 @@ diff -crNB blocks-new/packages/file-storage/tcl/file-storage-callback-procs.tcl 
 +         lappend elements choose_link [list label "" display_template $display_t]
 +     }
 + }
-diff -crNB blocks-new/packages/file-storage/www/delete.tcl blocks-clean/packages/file-storage/www/delete.tcl
-*** blocks-new/packages/file-storage/www/delete.tcl	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/delete.tcl	2009-07-05 21:29:52.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/delete.tcl file-storage/www/delete.tcl
+*** dotlrn-2.4.1/packages/file-storage/www/delete.tcl	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/delete.tcl	2009-07-05 21:29:52.000000000 -0400
 ***************
 *** 82,87 ****
 --- 82,90 ----
@@ -144,9 +144,9 @@ diff -crNB blocks-new/packages/file-storage/www/delete.tcl blocks-clean/packages
       ad_returnredirect $return_url
       ad_script_abort
   }
-diff -crNB blocks-new/packages/file-storage/www/file-add.tcl blocks-clean/packages/file-storage/www/file-add.tcl
-*** blocks-new/packages/file-storage/www/file-add.tcl	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/file-add.tcl	2009-07-05 21:29:03.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/file-add.tcl file-storage/www/file-add.tcl
+*** dotlrn-2.4.1/packages/file-storage/www/file-add.tcl	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/file-add.tcl	2009-07-05 21:29:03.000000000 -0400
 ***************
 *** 249,254 ****
 --- 249,257 ----
@@ -159,9 +159,9 @@ diff -crNB blocks-new/packages/file-storage/www/file-add.tcl blocks-clean/packag
       file delete $upload_file.tmpfile
   } -edit_data {
       set this_title $title
-diff -crNB blocks-new/packages/file-storage/www/file.adp blocks-clean/packages/file-storage/www/file.adp
-*** blocks-new/packages/file-storage/www/file.adp	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/file.adp	2009-07-05 21:28:37.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/file.adp file-storage/www/file.adp
+*** dotlrn-2.4.1/packages/file-storage/www/file.adp	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/file.adp	2009-07-05 21:28:37.000000000 -0400
 ***************
 *** 3,8 ****
 --- 3,9 ----
@@ -172,9 +172,9 @@ diff -crNB blocks-new/packages/file-storage/www/file.adp blocks-clean/packages/f
   
   <h1>@title;noquote@ - #file-storage.properties#</h1>
   
-diff -crNB blocks-new/packages/file-storage/www/file-edit.adp blocks-clean/packages/file-storage/www/file-edit.adp
-*** blocks-new/packages/file-storage/www/file-edit.adp	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/file-edit.adp	2009-07-05 21:30:41.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/file-edit.adp file-storage/www/file-edit.adp
+*** dotlrn-2.4.1/packages/file-storage/www/file-edit.adp	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/file-edit.adp	2009-07-05 21:30:41.000000000 -0400
 ***************
 *** 2,7 ****
 --- 2,8 ----
@@ -185,9 +185,9 @@ diff -crNB blocks-new/packages/file-storage/www/file-edit.adp blocks-clean/packa
   
   <formtemplate id="file-edit"></formtemplate>
   
-diff -crNB blocks-new/packages/file-storage/www/file-edit.tcl blocks-clean/packages/file-storage/www/file-edit.tcl
-*** blocks-new/packages/file-storage/www/file-edit.tcl	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/file-edit.tcl	2009-07-05 21:30:14.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/file-edit.tcl file-storage/www/file-edit.tcl
+*** dotlrn-2.4.1/packages/file-storage/www/file-edit.tcl	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/file-edit.tcl	2009-07-05 21:30:14.000000000 -0400
 ***************
 *** 68,73 ****
 --- 68,76 ----
@@ -200,9 +200,9 @@ diff -crNB blocks-new/packages/file-storage/www/file-edit.tcl blocks-clean/packa
   } -after_submit {
       ad_returnredirect "file?file_id=$file_id"
   }
-diff -crNB blocks-new/packages/file-storage/www/folder-chunk.tcl blocks-clean/packages/file-storage/www/folder-chunk.tcl
-*** blocks-new/packages/file-storage/www/folder-chunk.tcl	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/folder-chunk.tcl	2009-07-05 21:31:28.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/folder-chunk.tcl file-storage/www/folder-chunk.tcl
+*** dotlrn-2.4.1/packages/file-storage/www/folder-chunk.tcl	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/folder-chunk.tcl	2009-07-05 21:31:28.000000000 -0400
 ***************
 *** 148,153 ****
 --- 148,157 ----
@@ -230,9 +230,9 @@ diff -crNB blocks-new/packages/file-storage/www/folder-chunk.tcl blocks-clean/pa
       callback fs::folder_chunk::add_bulk_actions \
   	-bulk_variable "bulk_actions" \
   	-folder_id $folder_id \
-diff -crNB blocks-new/packages/file-storage/www/folder-create.tcl blocks-clean/packages/file-storage/www/folder-create.tcl
-*** blocks-new/packages/file-storage/www/folder-create.tcl	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/folder-create.tcl	2009-07-05 21:32:29.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/folder-create.tcl file-storage/www/folder-create.tcl
+*** dotlrn-2.4.1/packages/file-storage/www/folder-create.tcl	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/folder-create.tcl	2009-07-05 21:32:29.000000000 -0400
 ***************
 *** 113,118 ****
 --- 113,121 ----
@@ -245,9 +245,9 @@ diff -crNB blocks-new/packages/file-storage/www/folder-create.tcl blocks-clean/p
       ad_returnredirect "?folder_id=$folder_id"
       ad_script_abort
   } -edit_data {
-diff -crNB blocks-new/packages/file-storage/www/folder-edit.tcl blocks-clean/packages/file-storage/www/folder-edit.tcl
-*** blocks-new/packages/file-storage/www/folder-edit.tcl	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/folder-edit.tcl	2009-07-05 21:33:28.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/folder-edit.tcl file-storage/www/folder-edit.tcl
+*** dotlrn-2.4.1/packages/file-storage/www/folder-edit.tcl	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/folder-edit.tcl	2009-07-05 21:33:28.000000000 -0400
 ***************
 *** 54,59 ****
 --- 54,62 ----
@@ -260,9 +260,9 @@ diff -crNB blocks-new/packages/file-storage/www/folder-edit.tcl blocks-clean/pac
   
   } -after_submit {
       ad_returnredirect "?folder_id=$folder_id"
-diff -crNB blocks-new/packages/file-storage/www/index.tcl blocks-clean/packages/file-storage/www/index.tcl
-*** blocks-new/packages/file-storage/www/index.tcl	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/index.tcl	2009-07-08 14:43:30.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/index.tcl file-storage/www/index.tcl
+*** dotlrn-2.4.1/packages/file-storage/www/index.tcl	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/index.tcl	2009-07-08 14:43:30.000000000 -0400
 ***************
 *** 28,33 ****
 --- 28,41 ----
@@ -280,9 +280,9 @@ diff -crNB blocks-new/packages/file-storage/www/index.tcl blocks-clean/packages/
   # Don't allow delete if root folder
   set root_folder_p 0
   set root_folder_id [fs_get_root_folder]
-diff -crNB blocks-new/packages/file-storage/www/simple-add.tcl blocks-clean/packages/file-storage/www/simple-add.tcl
-*** blocks-new/packages/file-storage/www/simple-add.tcl	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/simple-add.tcl	2009-07-05 21:38:00.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/simple-add.tcl file-storage/www/simple-add.tcl
+*** dotlrn-2.4.1/packages/file-storage/www/simple-add.tcl	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/simple-add.tcl	2009-07-05 21:38:00.000000000 -0400
 ***************
 *** 99,106 ****
   
@@ -305,9 +305,9 @@ diff -crNB blocks-new/packages/file-storage/www/simple-add.tcl blocks-clean/pack
       ad_returnredirect "?folder_id=$folder_id"
 !     ad_script_abort
   }
-diff -crNB blocks-new/packages/file-storage/www/simple.adp blocks-clean/packages/file-storage/www/simple.adp
-*** blocks-new/packages/file-storage/www/simple.adp	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/simple.adp	2009-07-05 21:36:47.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/simple.adp file-storage/www/simple.adp
+*** dotlrn-2.4.1/packages/file-storage/www/simple.adp	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/simple.adp	2009-07-05 21:36:47.000000000 -0400
 ***************
 *** 3,8 ****
 --- 3,9 ----
@@ -318,9 +318,9 @@ diff -crNB blocks-new/packages/file-storage/www/simple.adp blocks-clean/packages
   
   <p><a href="@url@">@url@</a></p>
   <p>@description@</p>
-diff -crNB blocks-new/packages/file-storage/www/simple-delete.tcl blocks-clean/packages/file-storage/www/simple-delete.tcl
-*** blocks-new/packages/file-storage/www/simple-delete.tcl	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/simple-delete.tcl	2009-07-05 21:42:11.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/simple-delete.tcl file-storage/www/simple-delete.tcl
+*** dotlrn-2.4.1/packages/file-storage/www/simple-delete.tcl	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/simple-delete.tcl	2009-07-05 21:42:11.000000000 -0400
 ***************
 *** 22,27 ****
 --- 22,30 ----
@@ -333,9 +333,9 @@ diff -crNB blocks-new/packages/file-storage/www/simple-delete.tcl blocks-clean/p
   
   ad_returnredirect "./?folder_id=$folder_id"
   
-diff -crNB blocks-new/packages/file-storage/www/simple-edit.tcl blocks-clean/packages/file-storage/www/simple-edit.tcl
-*** blocks-new/packages/file-storage/www/simple-edit.tcl	2009-07-05 21:02:54.000000000 -0400
---- blocks-clean/packages/file-storage/www/simple-edit.tcl	2009-07-05 21:34:13.000000000 -0400
+diff -crNB dotlrn-2.4.1/packages/file-storage/www/simple-edit.tcl file-storage/www/simple-edit.tcl
+*** dotlrn-2.4.1/packages/file-storage/www/simple-edit.tcl	2009-07-05 21:02:54.000000000 -0400
+--- file-storage/www/simple-edit.tcl	2009-07-05 21:34:13.000000000 -0400
 ***************
 *** 38,43 ****
 --- 38,46 ----
