@@ -120,7 +120,7 @@ diff -crNB dotlrn-2.4.1/packages/evaluation/www/admin/tasks/task-add-edit.tcl ev
   } 
   
 + ## Planner View -> Extend Form
-+     callback -catch -impl "dotlrn" planner::extend_form -block_id $block_id -form_name "task"
++     callback -catch -impl planner planner::extend_form -block_id $block_id -form_name "task"
 + ###
 + 
   ad_form -extend -name task -form {
@@ -133,7 +133,7 @@ diff -crNB dotlrn-2.4.1/packages/evaluation/www/admin/tasks/task-add-edit.tcl ev
   	db_dml lob_size { *SQL* }
   
 + ## Planner View
-+         callback -catch -impl "dotlrn" planner::insert_object -block_id $block_id -object_id $task_id
++         callback -catch -impl planner planner::insert_object -block_id $block_id -object_id $task_id
 + ###
   
   	if { ![empty_string_p $upload_file] }  {
@@ -171,3 +171,16 @@ diff -crNB dotlrn-2.4.1/packages/evaluation/www/task-view.adp evaluation/www/tas
   
   <formtemplate id="task"></formtemplate>
   
+diff -crNB dotlrn-2.4.1/packages/evaluation/www/task-view-postgresql.xql evaluation/www/task-view-postgresql.xql
+*** dotlrn-2.4.1/packages/evaluation/www/task-view-postgresql.xql	    2005-04-07 05:26:58.000000000 -0600
+--- evaluation/www/task-view-postgresql.xql	    2009-11-25 08:29:25.000000000 -0600
+***************
+*** 12,17 ****
+--- 12,18 ----
+                 et.description,
+                 et.title as task_title,
+                 et.data as task_data,
++                et.task_item_id as task_item_id,
+  	       et.revision_id as task_revision_id,
+                 ets.title as solution_title,
+                 ets.data as solution_data,

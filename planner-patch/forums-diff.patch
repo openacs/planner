@@ -8,7 +8,7 @@ diff -crNB dotlrn-2.4.1/packages/forums/lib/forums/new.tcl forums/lib/forums/new
       }
   
 + ## Planner View
-+     callback -catch -impl "dotlrn" planner::insert_object -block_id $block_id -object_id $forum_id
++     callback -catch -impl planner planner::insert_object -block_id $block_id -object_id $forum_id
 + ###
 + 
       ad_returnredirect $return_url
@@ -22,7 +22,7 @@ diff -crNB dotlrn-2.4.1/packages/forums/lib/forums/new.tcl forums/lib/forums/new
       element set_value forum name $name
 + 
 + ## Planner View -> Extend Form
-+     callback -catch -impl "dotlrn" planner::extend_form -block_id $block_id -form_name "forum"
++     callback -catch -impl planner planner::extend_form -block_id $block_id -form_name "forum"
 + ###
   }
   

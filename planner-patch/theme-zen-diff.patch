@@ -3,13 +3,17 @@ diff -crNB dotlrn-2.4.1/packages/theme-zen/lib/lrn-master.adp theme-zen/lib/lrn-
 --- theme-zen/lib/lrn-master.adp	2009-07-07 14:00:38.000000000 -0400
 ***************
 *** 84,89 ****
---- 84,92 ----
+--- 84,96 ----
       <div id="sub-navigation">
         <div class="block-marker">#theme-zen.begin_sub_navigation#</div>
-        @subnavbar;noquote@
-+       <if @community_id@ ne "" and @planner_p@>
-+         <include src="/packages/planner/lib/navigation" planner_object_id="@planner_object_id@">
++       <if @block_view_p@ >
++         <if @community_id@ ne "" and @planner_p@>
++           <include src="/packages/planner/lib/navigation" planner_object_id="@planner_object_id@">
++         </if>
 +       </if>
++       <else>
+        @subnavbar;noquote@
++       </else>
       </div>
     </if>
   
@@ -18,7 +22,7 @@ diff -crNB dotlrn-2.4.1/packages/theme-zen/lib/lrn-master.tcl theme-zen/lib/lrn-
 --- theme-zen/lib/lrn-master.tcl	2009-07-07 14:00:56.000000000 -0400
 ***************
 *** 277,279 ****
---- 277,285 ----
+--- 277,286 ----
       template::head::add_css -href "/resources/dotlrn/dotlrn-toolbar.css"
       template::add_header -src "/packages/dotlrn/lib/toolbar"
   }
@@ -27,4 +31,5 @@ diff -crNB dotlrn-2.4.1/packages/theme-zen/lib/lrn-master.tcl theme-zen/lib/lrn-
 + if {![exists_and_not_null planner_object_id]} {
 +     set planner_object_id 0
 + }
++ set block_view_p [planner::enabled_p -community_id $community_id]
 + ###
