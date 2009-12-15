@@ -1,6 +1,6 @@
 <if @member_p@ eq 1>
 <if @community_id@ ne "" and @block_view_p@ eq "t">
-    <div id="blocks-navigation" style="float: right; font-size: 10px; margin-right: 10px; margin-top: -10px; display: inline;">
+    <div id="blocks-navigation" style="float: right; font-size: 10px; margin-right: 10px; margin-top: 0px; display: inline;">
         <form id="blocks_activities" method="get" action="./">
             <if @inside_block_object_p@ eq 1 and @prev_object_id@ ne 0>
                 <a href="/o/@prev_object_id@"><img width="18" height="18" src="/resources/dotlrn/left_nav.gif" /></a>
@@ -9,6 +9,7 @@
                 <if @inside_block_object_p@ eq 0>
                     <option value="">#planner.blocks_go_to#</option>
                 </if>
+                <option value="../">#dotlrn.class_page_home_title#</option>
                 <multiple name="get_blocks">
                     <if @get_blocks.changed_p@ eq 1 and @get_blocks.block_index@ ne 0>
                         <if @admin_p@ eq 1 or @get_blocks.block_display@ eq t>
