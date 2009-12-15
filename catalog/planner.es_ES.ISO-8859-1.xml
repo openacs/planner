@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="planner" package_version="1.0b" locale="es_ES" charset="ISO-8859-1">
+<message_catalog package_key="planner" locale="es_ES" charset="ISO-8859-1">
 
+  <msg key="activities">Actividades</msg>
+  <msg key="administration">Administracion del Curso</msg>
   <msg key="blocks_add_activity">Añadir una actividad nueva</msg>
   <msg key="blocks_add_existing_activity">Añadir una actividad</msg>
   <msg key="blocks_add_label">Agregar Nueva Etiqueta</msg>
@@ -57,4 +59,7 @@
   <msg key="blocks_week">Semana</msg>
   <msg key="blocks_weekly_format">Formato de Semanas</msg>
   <msg key="blocks_year_error">El año debe ser menor que 2035</msg>
+  <msg key="calendar">Calendario</msg>
+  <msg key="Confirm">Confirma</msg>
+  <msg key="news">Noticias</msg>
 </message_catalog>

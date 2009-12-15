@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <message_catalog package_key="planner" locale="en_US" charset="ISO-8859-1">
 
+  <msg key="activities">Activities</msg>
+  <msg key="administration">Course Administration</msg>
   <msg key="blocks_add_activity">Add a new activity</msg>
   <msg key="blocks_add_existing_activity">Add an activity</msg>
   <msg key="blocks_add_label">Add New Label</msg>
@@ -57,8 +59,10 @@ Start adding resources by turning on the Edit Mode.</msg>
   <msg key="blocks_week">Week</msg>
   <msg key="blocks_weekly_format">Weekly Format</msg>
   <msg key="blocks_year_error">The year must be lower than 2035</msg>
+  <msg key="calendar">Calendar</msg>
   <msg key="Cancel">Cancel</msg>
   <msg key="Confirm">Confirm</msg>
+  <msg key="news">News</msg>
   <msg key="OFF">OFF</msg>
   <msg key="ok">ok</msg>
   <msg key="ON">ON</msg>
