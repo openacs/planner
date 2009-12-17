@@ -10,9 +10,14 @@
 <!--[if IE 7]>
 <link media="all" href="/resources/planner/view-ie.css" type="text/css" rel="stylesheet"/>
 <![endif]-->
-<div id="blocks" style="min-width: 600px;">
+<link media="all" type="text/css" href="/resources/planner/navbar.css" rel="stylesheet">
+<link media="all" type="text/css" href="/resources/calendar/calendar.css" rel="stylesheet">
+<div id="bar" style="float:left;width:210px"><br/>
+  <include src="/packages/planner/lib/navbar">
+</div>
+<div id="blocks" style="min-width: 550px;float:left;width:65%">
 <if @admin_p@>
-<div id="edit-mode" style="float: right; height: 21px; font-size: 10px; margin-right: 10px; padding-top: 4px; display: inline;">
+<div id="edit-mode" style="float: right; height: 21px; font-size: 10px; margin-right: 10px; padding-top: 12px; display: inline;">
     <a href="course-edit">#planner.blocks_course_settings#</a> 
         &nbsp;&nbsp;#planner.blocks_edit_mode# 
         <if @edit_p@ eq 1> <b>#planner.blocks_ON#</b> / <a href="?edit_p=0">#planner.blocks_OFF#</a> </if><else> <a href="?edit_p=1">#planner.blocks_ON#</a> / <b>#planner.blocks_OFF#</b> </else>
@@ -169,6 +174,9 @@
                         <option value="javascript:void(0)">#planner.blocks_add_activity#...</option>
                         <option value="@forums_url;noquote@admin/forum-new?block_id=@get_blocks.block_id@">#forums.Forum#</option>
                         <option value="@community_url;noquote@assessment/asm-admin/assessment-form?type=test&block_id=@get_blocks.block_id@">#assessment.Assessment#</option>
+                        <if @chat_p@>
+                          <option value="@chat_url;noquote@/room-edit">Add Chat Room</option>
+                        </if>
                         <optgroup label="#dotlrn-evaluation.Evaluation_#">
                             <multiple name="get_grades">
                                 <option value="@community_url;noquote@evaluation/admin/tasks/task-add-edit?block_id=@get_blocks.block_id@&grade_id=@get_grades.grade_id@&return_url=@community_url;noquote@/evaluation/admin?grade_id=@get_grades.grade_id@">@get_grades.grade_name;noquote@</option>

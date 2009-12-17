@@ -26,8 +26,8 @@ diff -crNB dotlrn-2.4.1/packages/dotlrn/www/admin/planner-enable.tcl dotlrn/www/
 + }
 \ No newline at end of file
 diff -crNB dotlrn-2.4.1/packages/dotlrn/www/index.tcl dotlrn/www/index.tcl
-*** dotlrn-2.4.1/packages/dotlrn/www/index.tcl	2009-07-05 21:03:16.000000000 -0400
---- dotlrn/www/index.tcl	2009-07-08 12:58:22.000000000 -0400
+*** dotlrn-2.4.1/packages/dotlrn/www/index.tcl 2009-07-05 21:03:16.000000000 -0400
+--- dotlrn/www/index.tcl 2009-07-08 12:58:22.000000000 -0400
 ***************
 *** 25,30 ****
 --- 25,40 ----
@@ -46,4 +46,102 @@ diff -crNB dotlrn-2.4.1/packages/dotlrn/www/index.tcl dotlrn/www/index.tcl
 + 
   # Used to keep track of navigation links
   ad_set_client_property dotlrn page_num $page_num
-  
+
+diff -crNB dotlrn-2.4.1/packages/dotlrn/www/view-portlet.adp dotlrn/www/view-portlet.adp
+*** dotlrn-2.4.1/packages/dotlrn/www/view-portlet.adp Mon Nov  9 13:09:35 2009
+--- dotlrn/www/view-portlet.adp Mon Nov  9 13:09:13 2009
+***************
+*** 0 ****
+--- 1,30 ----
++ <master>
++ <property name="portal_page_p">1</property>
++ <link media="all" href="/resources/planner/view.css" type="text/css" rel="stylesheet"/>
++ <!--[if IE 6]>
++ <link media="all" href="/resources/planner/view-ie6.css" type="text/css" rel="stylesheet"/>
++ <![endif]-->
++ <!--[if IE 7]>
++ <link media="all" href="/resources/planner/view-ie.css" type="text/css" rel="stylesheet"/>
++ <![endif]-->
++ <link media="all" type="text/css" href="/resources/planner/navbar.css" rel="stylesheet">
++ <link media="all" type="text/css" href="/resources/calendar/calendar.css" rel="stylesheet">
++ <table style="width:100%">
++ <tr>
++ <td valign="top" style="width:210px">
++ <div id="bar" style="width:210px">
++   <include src="/packages/planner/lib/navbar" return_url=".">
++ </div>
++ <td valign="top">
++ <div id="blocks">
++ <include src="@element_src@"
++    element_id="@element_id@"
++    theme_id="@theme_id@"
++    region="2"
++    portal_id="@portal_id@"
++    edit_p="@edit_p@"
++    hide_links_p="@hide_links_p@">
++ </div>
++ </td>
++ </tr>
++ </table>
+\ No newline at end of file
+diff -crNB dotlrn-2.4.1/packages/dotlrn/www/view-portlet.tcl dotlrn/www/view-portlet.tcl
+*** dotlrn-2.4.1/packages/dotlrn/www/view-portlet.tcl Mon Nov  9 13:09:35 2009
+--- dotlrn/www/view-portlet.tcl Mon Nov  9 13:09:13 2009
+***************
+*** 0 ****
+--- 1,25 ----
++ # 
++ 
++ ad_page_contract {
++     
++     show portlet
++     
++     @author Marco Rodriguez (mterodsan@galileo.edu)
++     @creation-date 2009-08-10
++     @arch-tag: 88aac6ac-956b-4058-b213-bc435883bcc5
++     @cvs-id $Id$
++ } {
++     name
++ } -properties {
++ } -validate {
++ } -errors {
++ }
++ 
++ set portal_id [dotlrn_community::get_portal_id]
++ set portlet_name $name
++ set element_id [db_string get_element_id {*SQL*}]
++ set element_src "/packages/new-portal/www/render_styles/individual/render-element"
++ set theme_id [portal::get_theme_id -portal_id $portal_id]
++ set edit_p 0
++ set hide_links_p 1
++ portal::layout_elements [list 1 element_id]
+\ No newline at end of file
+diff -crNB dotlrn-2.4.1/packages/dotlrn/www/view-portlet.xql dotlrn/www/view-portlet.xql
+*** dotlrn-2.4.1/packages/dotlrn/www/view-portlet.xql Mon Nov  9 13:09:35 2009
+--- dotlrn/www/view-portlet.xql Mon Nov  9 13:09:13 2009
+***************
+*** 0 ****
+--- 1,21 ----
++ <?xml version="1.0"?>
++ <!DOCTYPE queryset PUBLIC "-//OpenACS//DTD XQL 1.0//EN" "http://www.thecodemill.biz/repository/xql.dtd">
++ <!--  -->
++ <!-- @author Marco Rodriguez (mterodsan@galileo.edu) -->
++ <!-- @creation-date 2009-08-10 -->
++ <!-- @arch-tag: 4beb922c-1a53-467e-8fbb-812fcd95e4dc -->
++ <!-- @cvs-id $Id$ -->
++ 
++ <queryset>
++ 
++     <fullquery name="get_element_id">
++         <querytext>
++           select element_id 
++           from portal_element_map pem, portal_pages pp, portal_datasources pd 
++           where pem.page_id=pp.page_id 
++           and pem.datasource_id = pd.datasource_id 
++           and pp.portal_id=:portal_id 
++           and pd.name = :portlet_name
++         </querytext>
++     </fullquery>
++ </queryset>
+\ No newline at end of file
+

@@ -857,8 +857,13 @@ ad_proc -public planner::enable {
             dotlrn_community::add_applet_to_community $community_id dotlrn_learning_content
         }
     }
-    # Mount the planner package
-    dotlrn::instantiate_and_mount $community_id planner
+    set package_id [dotlrn_community::get_package_id $community_id]
+    if {![site_node_apm_integration::get_child_package_id \
+              -package_id $package_id \
+              -package_key "planner"]} {
+	# Mount the planner package
+	dotlrn::instantiate_and_mount $community_id planner
+    }
     #Insert the community to blocks view and create the first empty block by default
     if { [string equal [planner::enabled_p -community_id $community_id] ""] } {
         set current_index 0
