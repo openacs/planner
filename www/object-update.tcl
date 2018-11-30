@@ -20,7 +20,7 @@ if {$object_info_p} {
     if {$object_id != 0} {
         set object_type [acs_object_type $object_id]
         if { [string equal $object_type "content_item"] } {
-            set object_type [content::item::content_type -item_id $object_id]
+            set object_type [content::item::get_content_type -item_id $object_id]
         }
         set image_specs "width=16 height=16"
         set object_image [planner::get_object_icon -object_type $object_type]
